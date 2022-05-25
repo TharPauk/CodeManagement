@@ -1,26 +1,40 @@
 PODS:
+  - JGProgressHUD (2.2)
+  - KeychainSwift (20.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
 
 DEPENDENCIES:
+  - JGProgressHUD
+  - KeychainSwift
   - RxCocoa
   - RxSwift
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - JGProgressHUD
+    - KeychainSwift
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
 
-PODFILE CHECKSUM: 3188f8018731a23270e08b5052c4e0ee0b700ca3
+PODFILE CHECKSUM: 9fe9836a36227825f450ba1a84f6685d75c96d71
 
 COCOAPODS: 1.11.2

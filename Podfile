@@ -7,5 +7,8 @@ target 'CodeManagement' do
 
   # Pods for CodeManagement
   pod 'RxSwift'
-  pod 'RxCocoa' 
+  pod 'RxCocoa'
+  pod 'KeychainSwift'
+  pod 'SDWebImage'
+  pod 'JGProgressHUD'
 end
