@@ -25,10 +25,12 @@ class UpcomingMovieCell: UITableViewCell {
     }
     
     func setData(movie: Movie) {
+        
         if let postPath = movie.posterPath,
            let url = URL(string: "\(EndPoint.imageUrl)/\(postPath)") {
             movieImage.sd_setImage(with: url)
         }
+        print("name===\(movie.title)")
         movieTitleLabel.text = movie.title
         movieOverviewLabel.text = movie.overview
         voteLabel.text = "\(String(describing: movie.voteAverage))%"
