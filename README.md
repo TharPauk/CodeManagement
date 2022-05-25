@@ -5,3 +5,5 @@
 ## Libraries and Frameworks
 - RxSwift
 - RxCocoa
+- SDWebImage
+- JGProgressHUD
