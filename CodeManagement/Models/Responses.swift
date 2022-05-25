@@ -12,7 +12,7 @@ struct UpcomingMovieResponse: Codable {
     let dates: Dates?
     let page, totalPages, totalResults, statusCode: Int?
     let statusMessage: String?
-    let results: [Movie]?
+    let results: [MovieData]?
 
     enum CodingKeys: String, CodingKey {
         case dates, page, results

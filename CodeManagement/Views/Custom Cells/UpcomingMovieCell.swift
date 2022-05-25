@@ -24,7 +24,7 @@ class UpcomingMovieCell: UITableViewCell {
         
     }
     
-    func setData(movie: Movie) {
+    func setData(movie: MovieData) {
         if let postPath = movie.posterPath,
            let url = URL(string: "\(EndPoint.imageUrl)/\(postPath)") {
             movieImage.sd_setImage(with: url)

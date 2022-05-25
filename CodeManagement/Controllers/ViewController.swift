@@ -46,12 +46,12 @@ class ViewController: UIViewController {
             cell.setData(movie: movie)
         }.disposed(by: bag)
         
-        tableView.rx.modelSelected(Movie.self).bind { [unowned self] movie in
+        tableView.rx.modelSelected(MovieData.self).bind { [unowned self] movie in
             self.pushToDetailView(movie: movie)
         }.disposed(by: bag)
     }
 
-    private func pushToDetailView(movie: Movie) {
+    private func pushToDetailView(movie: MovieData) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailController = storyboard.instantiateViewController(withIdentifier: "MovieDetailController") as! MovieDetailController
         detailController.setData(movie: movie)

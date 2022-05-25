@@ -11,7 +11,7 @@ import RxCocoa
 
 class UpcomingMoviesViewModel {
     
-    var movies = PublishSubject<[Movie]>()
+    var movies = PublishSubject<[MovieData]>()
     
     func fetchUpcomingMovies() {
         ApiService.shared.get(.upcoming, UpcomingMovieResponse.self) { [unowned self] result in

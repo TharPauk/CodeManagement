@@ -12,7 +12,7 @@ class MovieDetailController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     
-    private var movie: Movie!
+    private var movie: MovieData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class MovieDetailController: UIViewController {
     }
     
 
-    func setData(movie: Movie) {
+    func setData(movie: MovieData) {
         self.movie = movie
     }
 }
