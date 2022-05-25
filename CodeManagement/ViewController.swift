@@ -28,17 +28,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        fetchUpcomingMovies()
+        upcomingMoviesViewModel.fetchUpcomingMovies()
     }
     
     private func setupTableView() {
         tableView.rowHeight = 216
+        
         CellTypes.allCases.forEach {
             let nib = UINib(nibName: $0.rawValue, bundle: nil)
             tableView.register(nib, forCellReuseIdentifier: $0.rawValue)
@@ -47,24 +42,20 @@ class ViewController: UIViewController {
     }
     
     private func bindTableView() {
-//        tableView.rx.setDelegate(self).disposed(by: bag)
-
         upcomingMoviesViewModel.movies.bind(to: tableView.rx.items(cellIdentifier: CellTypes.UpcomingMovieCell.rawValue, cellType: UpcomingMovieCell.self)) { (row, movie, cell) in
             cell.setData(movie: movie)
-            
-            print("name===\(movie.title)")
         }.disposed(by: bag)
         
-        tableView.rx.modelSelected(Movie.self).bind { movie in
-            
+        tableView.rx.modelSelected(Movie.self).bind { [unowned self] movie in
+            self.pushToDetailView(movie: movie)
         }.disposed(by: bag)
-        
-        fetchUpcomingMovies()
     }
 
-    
-    private func fetchUpcomingMovies() {
-        upcomingMoviesViewModel.fetchUpcomingMovies()
+    private func pushToDetailView(movie: Movie) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailController = storyboard.instantiateViewController(withIdentifier: "MovieDetailController") as! MovieDetailController
+        detailController.setData(movie: movie)
+        navigationController?.pushViewController(detailController, animated: true)
     }
     
 

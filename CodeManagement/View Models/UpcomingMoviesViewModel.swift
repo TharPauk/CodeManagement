@@ -26,5 +26,6 @@ class UpcomingMoviesViewModel {
             }
         }
     }
+
     
 }

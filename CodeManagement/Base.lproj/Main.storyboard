@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="216" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FAS-Ig-aiS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="216" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FAS-Ig-aiS">
                                 <rect key="frame" x="16" y="140" width="382" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
@@ -40,6 +40,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="58.928571428571423"/>
+        </scene>
+        <!--Movie Detail Controller-->
+        <scene sceneID="O3u-99-D1H">
+            <objects>
+                <viewController restorationIdentifier="MovieDetailController" storyboardIdentifier="MovieDetailController" id="6sC-jR-pjd" customClass="MovieDetailController" customModule="CodeManagement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZwD-DA-e0g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fow-WK-Jbn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="e3c-qz-z4d"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64m-fm-OhB">
+                                <rect key="frame" x="20" y="272" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="spt-tF-Pot"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pqr-83-Qa0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pqr-83-Qa0" firstAttribute="trailing" secondItem="64m-fm-OhB" secondAttribute="trailing" constant="20" id="16e-Lw-HQ1"/>
+                            <constraint firstItem="fow-WK-Jbn" firstAttribute="leading" secondItem="pqr-83-Qa0" secondAttribute="leading" id="5vo-ew-791"/>
+                            <constraint firstItem="fow-WK-Jbn" firstAttribute="trailing" secondItem="pqr-83-Qa0" secondAttribute="trailing" id="Ryv-oW-a4r"/>
+                            <constraint firstItem="fow-WK-Jbn" firstAttribute="top" secondItem="pqr-83-Qa0" secondAttribute="top" id="fsQ-jV-q1z"/>
+                            <constraint firstItem="64m-fm-OhB" firstAttribute="top" secondItem="fow-WK-Jbn" secondAttribute="bottom" constant="8" symbolic="YES" id="ifx-42-zbu"/>
+                            <constraint firstItem="64m-fm-OhB" firstAttribute="leading" secondItem="pqr-83-Qa0" secondAttribute="leading" constant="20" id="j6v-pO-OpS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieImage" destination="fow-WK-Jbn" id="NSB-7M-giZ"/>
+                        <outlet property="movieTitle" destination="64m-fm-OhB" id="mmh-CY-Zyt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHd-9x-InE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8115942028987" y="72.991071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lk5-R0-1b7">
