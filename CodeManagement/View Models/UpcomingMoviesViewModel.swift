@@ -8,10 +8,14 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreData
 
 class UpcomingMoviesViewModel {
     
     var movies = PublishSubject<[MovieData]>()
+    
+    private let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persitentContainer.viewContext
     
     func fetchUpcomingMovies() {
         ApiService.shared.get(.upcoming, UpcomingMovieResponse.self) { [unowned self] result in
@@ -25,6 +29,10 @@ class UpcomingMoviesViewModel {
                 self.movies.onError(error)
             }
         }
+    }
+    
+    func storeMovie(movieData: MovieData) {
+        
     }
 
     
